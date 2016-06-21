@@ -96,7 +96,7 @@
           %th.last.shrink
       %tbody.dd-list{ data: { @abstract_model.param_key => params[:group_id] } }
         - @objects.each do |object|
-          %tr.dd-item{class: "#{@abstract_model.param_key}_row"}
+          %tr.dd-item{class: "#{@abstract_model.param_key}_row", data: { id: object.id }}
             %td
               = check_box_tag "bulk_ids[]", object.id, false
             - if @other_left_link ||= other_left && index_path(params.except('set').merge(params[:set].to_i != 1 ? {set: (params[:set].to_i - 1)} : {}))
