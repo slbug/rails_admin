@@ -94,7 +94,7 @@
           - if other_right
             %th.other.right.shrink= "..."
           %th.last.shrink
-      %tbody{ class: params[:group_id] }
+      %tbody{ data: { @abstract_model.param_key => params[:group_id] } }
         - @objects.each do |object|
           %tr{class: "#{@abstract_model.param_key}_row"}
             %td
