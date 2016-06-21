@@ -78,7 +78,7 @@
       %p
         %strong= description
 
-    %table.table.table-condensed.table-striped
+    %table.table.table-condensed.table-striped.dd
       %thead
         %tr
           %th.shrink
@@ -94,9 +94,9 @@
           - if other_right
             %th.other.right.shrink= "..."
           %th.last.shrink
-      %tbody{ data: { @abstract_model.param_key => params[:group_id] } }
+      %tbody.dd-list{ data: { @abstract_model.param_key => params[:group_id] } }
         - @objects.each do |object|
-          %tr{class: "#{@abstract_model.param_key}_row"}
+          %tr.dd-item{class: "#{@abstract_model.param_key}_row"}
             %td
               = check_box_tag "bulk_ids[]", object.id, false
             - if @other_left_link ||= other_left && index_path(params.except('set').merge(params[:set].to_i != 1 ? {set: (params[:set].to_i - 1)} : {}))
