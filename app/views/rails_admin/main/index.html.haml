@@ -94,7 +94,7 @@
           - if other_right
             %th.other.right.shrink= "..."
           %th.last.shrink
-      %tbody.dd-list{ data: { @abstract_model.param_key => params[:group_id] } }
+      %tbody.dd-list{ data: { model: @abstract_model.param_key, id: params[:group_id] } }
         - @objects.each do |object|
           %tr.dd-item{class: "#{@abstract_model.param_key}_row", data: { id: object.id }}
             %td
